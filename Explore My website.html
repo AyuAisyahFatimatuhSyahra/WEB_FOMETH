@@ -6,20 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document1</title>
     <link rel="stylesheet" href="style4.css">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 </head>
 <body>
     <div class="hero">
-<nav>
+<div class = "music">
+    <img src = "media/mercy.jpg">
+    <div class="info">
+        <h1>Podcast - "Self Acceptance ditengah pandemi"</h1>
+        <p>Mental Health - little talks</p>
+        <div id="waveform"></div>
+        <div class="controls">
+            <img src="media/play.png" id="playBtn">
+            <img src="media/stop.png" id="stopBtn">
+            <img src="media/volume.png" id="volumeBtn">
+        </div>
+       
+    </div>
+
+</div>
+</div>
+<script>
+var playBtn = document.getElementById("playBtn");
+var playBtn = document.getElementById("stopBtn");
+var playBtn = document.getElementById("volumeBtn");
+
+var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: '#dde5ec',
+    progressColor: '#03cebf',
+    barwidth: 4,
+    height: 90,
+    responsive: true,
+    hideScrollbar: true,
+    barRadious: 4
+});
+wavesurfer.load('media/podcast.mp3');
+
+playBtn.onclick = function(){
+    wavesurfer.playPause();
+    if(playBtn.src.includes(play.png)){
+        playBtn.src = "media/pause.png";
+    }else{
+        playBtn.src="media/play.png";
+    }
+    }
+
+
+    stopBtn.onclick = function(){
+    wavesurfer.stopPause();
     
-    
-        
-          
-        
-           
-                            
-                           
-        
-                       
-        
-            
-        
+    volumeBtn.onclick = function(){
+    wavesurfer.toggleMute();4
+}
+</script>
+
+</body>
+</html>
